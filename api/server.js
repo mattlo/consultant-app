@@ -10,10 +10,8 @@ server.connection({
 // Add the route
 server.route({
   method: 'GET',
-  path:'/',
-  handler: function (request, reply) {
-    return reply('response test');
-  }
+  path: '/',
+  handler: (request, response) => response('response test')
 });
 
 // Start the server
