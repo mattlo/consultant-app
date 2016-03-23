@@ -4,7 +4,7 @@
   "description": "Specifically for Matt Lo",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && webpack --optimize-minimize --optimize-dedupe && babel client -d dist/client && babel api -d dist/api && babel server.js -d dist",
+    "build": "rm -rf dist && mkdir -p dist && PROD=true webpack --optimize-minimize --optimize-dedupe && babel client -d dist/client && babel api -d dist/api && babel server.js -d dist",
     "webpack-start": "webpack-dev-server --port 8002",
     "dev-start": "babel-node server.js",
     "start": "PROD=true babel-node server.js",

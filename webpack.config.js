@@ -24,7 +24,8 @@ const common = {
   plugins: [
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     new webpack.DefinePlugin({
-      'process.env.RC': true
+      'process.env.RC': true,
+      'process.env.PROD': process.env.PROD
     })
   ],
   module: {

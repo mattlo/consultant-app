@@ -2,6 +2,12 @@ if (process.env.RC) require('./HomePage.scss');
 import React from 'react';
 
 export default function Layout({body}) {
+  let host;
+
+  if (!process.env.PROD) {
+    host = '//localhost:8002';
+  }
+
   return (
     <html>
       <head>
@@ -17,7 +23,7 @@ export default function Layout({body}) {
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{__html: body}} />
-        <script src="//localhost:8002/assets/bundle.js"></script>
+        <script src={`${host}/assets/bundle.js`}></script>
       </body>
     </html>
   );
