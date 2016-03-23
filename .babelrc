@@ -3,12 +3,6 @@
     "es2015",
     "react"
   ],
-  "ignore": [
-    "node_modules/**/*.js",
-    "dist/**/*",
-    "dist/**/*.js",
-    "assets/**/*.js"
-  ],
   "plugins": [
     "syntax-class-properties",
     "syntax-object-rest-spread",
