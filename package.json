@@ -4,10 +4,11 @@
   "description": "Specifically for Matt Lo",
   "main": "index.js",
   "scripts": {
-    "dev-client": "",
-    "dev-server": "babel-node api/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint '**/*.js' --cache --cache-location '.eslintcache'"
+    "webpack-start": "webpack-dev-server --port 8002",
+    "dev-start": "babel-node client/server.js",
+    "start": "PROD=true babel-node client/server.js",
+    "test": "true",
+    "lint": "eslint 'client/**/*.js' 'api/**/*.js' --cache --cache-location '.eslintcache'"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "hapi": "^13.2.1",
     "html-webpack-plugin": "^2.12.0",
     "html-webpack-template": "^4.0.0",
+    "inert": "^3.2.0",
     "lodash": "^4.6.1",
     "node-sass": "^3.4.2",
     "react": "^0.14.7",

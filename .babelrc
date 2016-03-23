@@ -10,7 +10,7 @@
     "transform-object-rest-spread"
   ],
   "env": {
-    "dev-client": {
+    "webpack-start": {
       "plugins": [
         [
           "react-transform", {

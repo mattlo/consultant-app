@@ -30,3 +30,5 @@ node_modules
 
 build
 .eslint
+assets/bundle.js
+.eslintcache
