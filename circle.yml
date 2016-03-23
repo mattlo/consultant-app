@@ -15,6 +15,10 @@ dependencies:
   cache_directories:
     - "node_modules"
 
+test:
+  pre:
+    - npm lint
+
 deployment:
   production:
     branch: master
