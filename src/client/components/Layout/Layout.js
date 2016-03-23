@@ -1,4 +1,3 @@
-if (process.env.RC) require('./HomePage.scss');
 import React from 'react';
 
 export default function Layout({body}) {
