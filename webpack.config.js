@@ -1,10 +1,11 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const PATHS = {
-  app: path.join(__dirname, 'client'),
-  build: path.join(__dirname, 'assets')
+  app: path.join(__dirname, 'src/client'),
+  build: path.join(__dirname, 'dist/assets')
 };
 
 const TARGET = process.env.npm_lifecycle_event;
@@ -36,27 +37,31 @@ const common = {
         include: [
           PATHS.app
         ]
-      },
-      {
-        test: /\.css$/,
-        loaders: ['style', 'css'],
-        // Include accepts either a path or an array of paths.
-        include: PATHS.app
-      },
-      {
-        test: /\.scss$/,
-        loaders: [
-          'style',
-          'css?sourceMap',
-          'sass?sourceMap'
-        ]
       }
     ]
   }
 };
 
 if (TARGET === 'build' || !TARGET) {
-  module.exports = merge(common, {});
+  module.exports = merge(common, {
+    module: {
+      loaders: [
+        {
+          test: /\.css$/,
+          loader: ExtractTextPlugin.extract('style', 'css')
+        },
+        {
+          test: /\.scss$/,
+          loader: ExtractTextPlugin.extract('style', 'css?sourceMap', 'sass?sourceMap')
+        }
+      ]
+    },
+    plugins: [
+      new ExtractTextPlugin('bundle.css')
+    ]
+  }, {
+    allChunks: true
+  });
 }
 
 if (TARGET === 'webpack-start') {
@@ -76,7 +81,26 @@ if (TARGET === 'webpack-start') {
       // Parse host and port from env so this is easy to customize.
       host: process.env.HOST,
       port: process.env.PORT
-    }, plugins: [
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.css$/,
+          loaders: ['style', 'css'],
+          // Include accepts either a path or an array of paths.
+          include: PATHS.app
+        },
+        {
+          test: /\.scss$/,
+          loaders: [
+            'style',
+            'css?sourceMap',
+            'sass?sourceMap'
+          ]
+        }
+      ]
+    },
+    plugins: [
       new webpack.HotModuleReplacementPlugin()
     ]
   });

@@ -18,6 +18,8 @@ export default function Layout({body}) {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
 
+        <link rel="stylesheet" type="text/css" href="/assets/bundle.css" />
+
         <title>JavaScript Architecture, Implementation, and Training by Matt Lo</title>
 
       </head>

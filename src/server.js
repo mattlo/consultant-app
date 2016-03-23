@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/server';
 import React from 'react';
 import HomePage from './client/components/HomePage/HomePage';
 import Layout from './client/components/Layout/Layout';
+import path from 'path';
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -39,8 +40,7 @@ server.register([
     path: '/assets/{param*}',
     handler: {
       directory: {
-        path: 'assets',
-        index: ['index.html']
+        path: path.resolve(__dirname, 'assets')
       }
     }
   });

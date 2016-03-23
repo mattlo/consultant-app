@@ -4,9 +4,9 @@
   "description": "Specifically for Matt Lo",
   "main": "index.js",
   "scripts": {
-    "build": "IGNORE_SCSS=1 rm -rf dist && mkdir -p dist && PROD=true webpack --optimize-minimize --optimize-dedupe && babel client -d dist/client && babel api -d dist/api && babel server.js -d dist",
+    "build": "rm -rf dist && mkdir -p dist && PROD=true webpack --optimize-minimize --optimize-dedupe && IGNORE_SCSS=1 babel src -d dist && cp -r src/assets/. dist/assets",
     "webpack-start": "IGNORE_SCSS=1 webpack-dev-server --port 8002",
-    "start": "PROD=1 IGNORE_SCSS=1 babel-node server.js",
+    "start": "PROD=1 IGNORE_SCSS=1 babel-node src/server.js",
     "test": "true",
     "lint": "eslint 'client/**/*.js' 'api/**/*.js' --cache --cache-location '.eslintcache'"
   },
@@ -38,6 +38,7 @@
     "eslint": "^2.4.0",
     "eslint-config-airbnb": "^6.1.0",
     "eslint-plugin-react": "^4.2.3",
+    "extract-text-webpack-plugin": "^1.0.1",
     "hapi": "^13.2.1",
     "html-webpack-plugin": "^2.12.0",
     "html-webpack-template": "^4.0.0",
