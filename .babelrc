@@ -7,7 +7,8 @@
     "syntax-class-properties",
     "syntax-object-rest-spread",
     "transform-class-properties",
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    "./tools/scssImportResolver"
   ],
   "env": {
     "webpack-start": {

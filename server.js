@@ -13,7 +13,6 @@ server.connection({
   port: 8000
 });
 
-
 server.register([
   {register: inert}
 ], pluginErr => {
