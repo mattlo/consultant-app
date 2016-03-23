@@ -1,5 +1,4 @@
 general:
-  build_dir: app
   artifacts:
     - "app.tar.gz"
 
