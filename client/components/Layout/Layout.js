@@ -2,7 +2,7 @@ if (process.env.RC) require('./HomePage.scss');
 import React from 'react';
 
 export default function Layout({body}) {
-  let host;
+  let host = '';
 
   if (!process.env.PROD) {
     host = '//localhost:8002';
