@@ -2,8 +2,8 @@ import Hapi from 'hapi';
 import inert from 'inert';
 import ReactDOM from 'react-dom/server';
 import React from 'react';
-import HomePage from './components/HomePage/HomePage';
-import Layout from './components/Layout/Layout';
+import HomePage from './client/components/HomePage/HomePage';
+import Layout from './client/components/Layout/Layout';
 
 // Create a server with a host and port
 const server = new Hapi.Server();
