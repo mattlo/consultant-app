@@ -17,7 +17,7 @@ dependencies:
 
 test:
   pre:
-    - npm lint
+    - npm run lint
 
 deployment:
   production:
