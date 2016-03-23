@@ -9,7 +9,7 @@ import Layout from './client/components/Layout/Layout';
 const server = new Hapi.Server();
 
 server.connection({
-  host: 'localhost',
+  host: '0.0.0.0',
   port: 8000
 });
 
