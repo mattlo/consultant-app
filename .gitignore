@@ -32,3 +32,4 @@ build
 .eslint
 assets/bundle.js
 .eslintcache
+dist
