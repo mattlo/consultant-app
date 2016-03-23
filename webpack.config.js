@@ -54,7 +54,7 @@ const common = {
   }
 };
 
-if (TARGET === 'webpack-build' || !TARGET) {
+if (TARGET === 'build' || !TARGET) {
   module.exports = merge(common, {});
 }
 

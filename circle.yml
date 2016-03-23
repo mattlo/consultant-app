@@ -1,0 +1,24 @@
+general:
+  build_dir: app
+  artifacts:
+    - "app.tar.gz"
+
+machine:
+  node:
+    version: 4.4.0
+  post:
+    - npm install -g npm@3.x.x
+
+dependencies:
+  override:
+    - NPM_CONFIG_PROGRESS="false" npm install
+  cache_directories:
+    - "node_modules"
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - npm run build
+      - chmod +x deploy.sh
+      - ./deploy.sh "mattlo.io"
