@@ -1,3 +1,4 @@
+import '../../libs/bootstrap.scss';
 import './HomePage.scss';
 import React from 'react';
 import HeroSalesPitch from '../HeroSalesPitch/HeroSalesPitch';
