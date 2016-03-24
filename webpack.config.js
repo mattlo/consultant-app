@@ -10,7 +10,8 @@ const PATHS = {
 
 const TARGET = process.env.npm_lifecycle_event;
 
-process.env.BABEL_ENV = TARGET;
+// don't process build layer
+process.env.BABEL_ENV = 'prod';
 
 const common = {
   entry: [
