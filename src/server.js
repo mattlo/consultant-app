@@ -14,6 +14,14 @@ server.connection({
   port: 8000
 });
 
+// used for any potential client viewing the source code
+const sourceAds = `<!--
+
+  If you seek the source, https://github.com/mattlo/consultant-app is your guide.
+  If you seek the truth, email  mlo@mattlo.io  to unlock technological and business potential.
+
+-->`;
+
 server.register([
   {register: inert}
 ], pluginErr => {
@@ -31,7 +39,7 @@ server.register([
 
       const html = ReactDOM.renderToStaticMarkup(<Layout {...props} />);
 
-      res(`<!doctype>${html}`);
+      res(`<!doctype html>\n${sourceAds}\n${html}`);
     }
   });
 
