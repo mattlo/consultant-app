@@ -1,3 +1,26 @@
-.hero-sales-pitch {
+@import "../../libs/bootstrap-config.scss";
 
+.hero-sales-pitch {
+  height: 431px;
+  position: relative;
+  overflow: hidden;
+
+  .embed-responsive {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .fx {
+    z-index: 1; // guarantee animation is always above poster image
+  }
+
+  @include  media-breakpoint-down(sm) {
+    height: auto;
+
+    .embed-responsive {
+      position: relative;
+    }
+  }
 }
