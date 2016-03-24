@@ -4,6 +4,7 @@
   height: 431px;
   position: relative;
   overflow: hidden;
+  text-shadow: 1px 1px #000;
 
   .embed-responsive {
     position: absolute;
@@ -14,6 +15,33 @@
 
   .fx {
     z-index: 1; // guarantee animation is always above poster image
+  }
+
+  .contents {
+    background: rgba(#000, 0.4);
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    color: #fff;
+  }
+
+  .headline {
+    font-weight: 200;
+    font-size: 45px;
+
+    @include media-breakpoint-down(md) {
+      font-size: 40px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 37px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 22px;
+    }
   }
 
   @include  media-breakpoint-down(sm) {
