@@ -1,9 +1,10 @@
 import React from 'react';
 
 export default function Layout({body}) {
+  const showDistAssets = process.env.PROD;
   let host = '';
 
-  if (!process.env.PROD) {
+  if (!showDistAssets) {
     host = '//localhost:8002';
   }
 
@@ -17,7 +18,9 @@ export default function Layout({body}) {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
 
-        <link rel="stylesheet" type="text/css" href="/assets/bundle.css" />
+        {showDistAssets ?
+          <link rel="stylesheet" type="text/css" href="/assets/bundle.css" />
+        : null}
 
         <title>JavaScript Architecture, Implementation, and Training by Matt Lo</title>
 
