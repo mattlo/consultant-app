@@ -18,6 +18,8 @@ export default function Layout({body}) {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
 
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,300,400italic,600" rel="stylesheet" type="text/css" />
+
         {showDistAssets ?
           <link rel="stylesheet" type="text/css" href="/assets/bundle.css" />
         : null}
