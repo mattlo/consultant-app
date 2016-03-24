@@ -53,7 +53,10 @@ if (TARGET === 'build' || !TARGET) {
         },
         {
           test: /\.scss$/,
-          loader: ExtractTextPlugin.extract('style', 'css?sourceMap', 'sass?sourceMap')
+          loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap'),
+          include: [
+            PATHS.app
+          ]
         }
       ]
     },
