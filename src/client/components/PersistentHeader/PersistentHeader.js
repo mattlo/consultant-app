@@ -53,8 +53,8 @@ export default class PersistentHeader extends React.Component {
                 <span
                   key={index}
                   className={classnames('text-rotation', {
-                  active: index === this.state.rotationIndex
-                })}
+                    active: index === this.state.rotationIndex
+                  })}
                 >
                 {text}
               </span>
