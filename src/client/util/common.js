@@ -1,7 +1,12 @@
+import WindowMock from 'window-mock';
+
+export function getWindow() {
+  return typeof window !== 'undefined' ? window : new WindowMock();
+}
+
 export function isTouchDevice() {
-  if (typeof window === 'undefined') {
-    return false;
-  }
+  const window = getWindow();
+  const navigator = window.navigator || {};
 
   return 'ontouchstart' in window || navigator.maxTouchPoints;
 }

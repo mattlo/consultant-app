@@ -1,6 +1,7 @@
 import './PersistentHeader.scss';
 import React from 'react';
 import classnames from 'classnames';
+import {getWindow} from '../../util/common';
 
 export default class PersistentHeader extends React.Component {
   static headerScrollTrigger = 150;
@@ -23,12 +24,12 @@ export default class PersistentHeader extends React.Component {
 
   componentDidMount() {
     this.timer = this.runRotationTimer();
-    window.addEventListener('scroll', this.handleScroll, false);
+    getWindow().addEventListener('scroll', this.handleScroll, false);
   }
 
   componentWillUnmount() {
     clearTimeout(this.timer);
-    window.removeEventListener('scroll', this.handleScroll, false);
+    getWindow().removeEventListener('scroll', this.handleScroll, false);
   }
 
   handleScroll = () => {
@@ -40,7 +41,7 @@ export default class PersistentHeader extends React.Component {
   };
 
   activateHeader() {
-    return window.scrollY >= PersistentHeader.headerScrollTrigger;
+    return getWindow().scrollY >= PersistentHeader.headerScrollTrigger;
   }
 
   runRotationTimer() {
