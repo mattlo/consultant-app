@@ -20,7 +20,7 @@ export default function HeroSalesPitch() {
       <div className="contents">
         <div className="container">
           <h1 className="headline">
-            Discover what Matt can unlock in your engineering team.
+            Discover what <span className="name">Matt</span> can unlock in your engineering team.
           </h1>
         </div>
       </div>

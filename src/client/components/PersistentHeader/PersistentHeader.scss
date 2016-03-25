@@ -1,3 +1,42 @@
-.persistent-header {
+@import "../../libs/bootstrap-config.scss";
 
+.persistent-header {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  z-index: 100;
+
+  .icon-javascript-alt {
+    font-size: 30px;
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+    color: $brand-primary;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 24px;
+      top: -2px;
+    }
+  }
+
+  .roi-text {
+    padding-top: 20px;
+    line-height: 0px;
+    font-size: 20px;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 16px;
+    }
+  }
+
+  .text-rotation {
+    + .text-rotation {
+      &:before {
+        content: ',';
+        margin-right: 5px;
+      }
+    }
+  }
 }

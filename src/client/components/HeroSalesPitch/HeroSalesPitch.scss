@@ -4,7 +4,7 @@
   height: 431px;
   position: relative;
   overflow: hidden;
-  text-shadow: 1px 1px #000;
+  background: $gray-dark;
 
   .embed-responsive {
     position: absolute;
@@ -24,12 +24,26 @@
     bottom: 0;
     width: 100%;
     z-index: 1;
-    color: #fff;
+    color: $brand-primary;
   }
 
   .headline {
     font-weight: 200;
     font-size: 45px;
+
+    .name {
+      position: relative;
+
+      &:after {
+        width: 100%;
+        height: 3px;
+        background: $brand-primary;
+        position: absolute;
+        bottom: 6px;
+        left: 0;
+        content: ' ';
+      }
+    }
 
     @include media-breakpoint-down(md) {
       font-size: 40px;
@@ -41,6 +55,12 @@
 
     @media (max-width: 500px) {
       font-size: 22px;
+      font-weight: normal;
+
+      .name:after {
+        height: 2px;
+        bottom: 3px;
+      }
     }
   }
 
