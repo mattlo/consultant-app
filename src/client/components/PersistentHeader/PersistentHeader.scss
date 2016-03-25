@@ -1,5 +1,7 @@
 @import "../../libs/bootstrap-config.scss";
 
+$rotationBreakpoint: 580px;
+
 .persistent-header {
   position: fixed;
   width: 100%;
@@ -31,11 +33,31 @@
     }
   }
 
-  .text-rotation {
-    + .text-rotation {
-      &:before {
-        content: ',';
-        margin-right: 5px;
+  .text-rotation-container {
+    position: relative;
+  }
+
+  @media (min-width: $rotationBreakpoint + 1) {
+    .text-rotation {
+      + .text-rotation {
+        &:before {
+          content: ',';
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $rotationBreakpoint) {
+    .text-rotation {
+      opacity: 0;
+      transition: all ease-in-out 0.3s;
+      position: absolute;
+      left: 0;
+      top: 12px;
+
+      &.active {
+        opacity: 1;
       }
     }
   }
