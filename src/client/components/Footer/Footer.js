@@ -4,7 +4,15 @@ import React from 'react';
 export default function Footer() {
   return (
     <div className="footer">
-      Footer Component
+      <div className="row">
+
+      </div>
+      <div className="company-info">
+        <div className="container">
+          Matt Lo is an independent consultant in Chicago, IL. Learn Frontend,
+          LLC {(new Date()).getFullYear()}.
+        </div>
+      </div>
     </div>
   );
 }

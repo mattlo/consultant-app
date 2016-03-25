@@ -12,6 +12,7 @@ export default function HomePage() {
       <PersistentHeader />
       <HeroSalesPitch />
       <QuickOfferings />
+      <Footer />
     </div>
   );
 }

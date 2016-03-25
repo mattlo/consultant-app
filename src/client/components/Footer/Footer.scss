@@ -1,0 +1,10 @@
+@import "../../libs/bootstrap-config.scss";
+
+.footer {
+  .company-info {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: $gray-dark;
+    color: $brand-primary;
+  }
+}

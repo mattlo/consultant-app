@@ -23,10 +23,10 @@ export default function QuickOfferings() {
           <div className="contents">
             <h3>Remote Code Reviews</h3>
             <p>
-              I provide customized reports that help determine technical debt, maintainability,
-              ability to scale, and suggestions to improve time-to-market. Your company provides me
-              access to the codebase and you receive your review and a video conference call
-              outlining the items. All for a fixed cost.
+              I provide customized reports that identifies levels of technical debt,
+              maintainability, ability to scale, and suggestions to improve time-to-market. Your
+              company provides me access to the codebase and you receive your review and a video
+              conference call outlining the items. All for a fixed cost.
             </p>
           </div>
         </div>
