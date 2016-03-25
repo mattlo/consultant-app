@@ -8,6 +8,11 @@ $rotationBreakpoint: 580px;
   color: #fff;
   text-shadow: 1px 1px #000;
   z-index: 100;
+  transition: background ease-in-out 0.4s;
+
+  &.active {
+    background: rgba(#000, 0.8);
+  }
 
   .icon-javascript-alt {
     font-size: 30px;

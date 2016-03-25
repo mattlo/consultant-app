@@ -3,6 +3,8 @@ import React from 'react';
 import classnames from 'classnames';
 
 export default class PersistentHeader extends React.Component {
+  static headerScrollTrigger = 150;
+
   constructor(props) {
     super(props);
 
@@ -14,16 +16,35 @@ export default class PersistentHeader extends React.Component {
     ];
 
     this.state = {
-      rotationIndex: 0
+      rotationIndex: 0,
+      headerState: this.activateHeader()
     };
   }
 
   componentDidMount() {
-    this.runRotationTimer();
+    this.timer = this.runRotationTimer();
+    window.addEventListener('scroll', this.handleScroll, false);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timer);
+    window.removeEventListener('scroll', this.handleScroll, false);
+  }
+
+  handleScroll = () => {
+    if (this.activateHeader() && !this.state.headerActive) {
+      this.setState({headerActive: true});
+    } else if (!this.activateHeader() && this.state.headerActive) {
+      this.setState({headerActive: false});
+    }
+  };
+
+  activateHeader() {
+    return window.scrollY >= PersistentHeader.headerScrollTrigger;
   }
 
   runRotationTimer() {
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.runRotationTimer();
       this.updateRotationText();
     }, 1500);
@@ -44,7 +65,11 @@ export default class PersistentHeader extends React.Component {
 
   render() {
     return (
-      <div className="persistent-header">
+      <div
+        className={classnames('persistent-header', {
+          active: this.state.headerActive
+        })}
+      >
         <div className="container">
           <div className="roi-text">
             <i className="icon-javascript-alt" />
