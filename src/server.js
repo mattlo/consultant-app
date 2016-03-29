@@ -6,6 +6,7 @@ import Layout from './client/components/Layout/Layout';
 import path from 'path';
 import Router from './routes';
 import Iso from 'iso';
+import 'babel-polyfill';
 
 // Create a server with a host and port
 const server = new Hapi.Server();
