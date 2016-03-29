@@ -2,9 +2,10 @@ import Hapi from 'hapi';
 import inert from 'inert';
 import ReactDOM from 'react-dom/server';
 import React from 'react';
-import HomePage from './client/components/HomePage/HomePage';
 import Layout from './client/components/Layout/Layout';
 import path from 'path';
+import Router from './routes';
+import Iso from 'iso';
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -31,15 +32,29 @@ server.register([
 
   server.route({
     method: 'GET',
-    path: '/',
+    path: '/{param*}',
     handler: (req, res) => {
-      const props = {
-        body: process.env.PROD ? ReactDOM.renderToString(<HomePage />) : undefined
-      };
+      const iso = new Iso();
 
-      const html = ReactDOM.renderToStaticMarkup(<Layout {...props} />);
+      function resolveResponse(props) {
+        const html = ReactDOM.renderToStaticMarkup(<Layout {...props} />);
 
-      res(`<!doctype html>\n${sourceAds}\n${html}`);
+        res(`<!doctype html>\n${sourceAds}\n${html}`);
+      }
+
+      // only do server side rendering on prod, local dev webpack throws
+      // react checksum issues
+      const serverState = {path: req.path};
+
+      if (process.env.PROD) {
+        Router.dispatch(serverState, (state, component) => {
+          iso.add(ReactDOM.renderToString(component), serverState);
+          resolveResponse({body: iso.render()});
+        });
+      } else {
+        iso.add('', serverState);
+        resolveResponse({body: iso.render()});
+      }
     }
   });
 

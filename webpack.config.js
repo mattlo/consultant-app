@@ -16,6 +16,7 @@ process.env.BABEL_ENV = 'prod';
 const common = {
   entry: [
     // main bundle
+    'babel-polyfill',
     `${PATHS.app}/entry.js`
   ],
   output: {
@@ -36,7 +37,8 @@ const common = {
         test: /\.jsx?$/,
         loaders: ['babel?cacheDirectory'],
         include: [
-          PATHS.app
+          PATHS.app,
+          path.join(__dirname, 'src/routes.js')
         ]
       }
     ]

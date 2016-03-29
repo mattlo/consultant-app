@@ -1,5 +1,14 @@
-import React from 'react';
 import {render} from 'react-dom';
-import HomePage from './components/HomePage/HomePage';
+import routes from '../routes';
+import iso from 'iso';
 
-render(<HomePage />, document.getElementById('app'));
+function renderRoute(serverState) {
+  routes.dispatch(serverState, (state, component) => {
+    render(component, document.getElementById('app'));
+  });
+}
+
+
+iso.bootstrap(state => {
+  renderRoute(state);
+});
