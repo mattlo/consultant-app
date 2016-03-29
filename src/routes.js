@@ -5,6 +5,8 @@ import DetailPage from './client/components/DetailsPage/DetailsPage';
 
 export default new Router(router => {
   router('/', () => <HomePage />);
-
-  router('/matt-lo-experience-and-consultancy', () => <DetailPage />);
+  router('/experience-and-consultancy', () => <DetailPage />);
+  router('/case-study/innovadiv-com', () => <DetailPage />);
+  router('/case-study/torys-com', () => <DetailPage />);
+  router('/case-study/championautoparts-com', () => <DetailPage />);
 });
