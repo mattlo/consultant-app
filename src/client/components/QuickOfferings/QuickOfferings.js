@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function QuickOfferings() {
   return (
-    <div className="container quick-offerings">
+    <div className="quick-offerings">
       <div className="row">
         <div className="col-xs-12">
           <div className="contents">
