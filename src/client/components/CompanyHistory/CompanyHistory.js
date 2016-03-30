@@ -3,18 +3,18 @@ import React from 'react';
 
 export default function CompanyHistory() {
   const logos = [
-    '/assets/federal-mogul.png',
-    '/assets/ge-capital-logo.png',
-    '/assets/hyatt-logo.png',
-    '/assets/tribune-logo.png',
-    '/assets/gt-logo.png',
-    '/assets/maestro-logo.png',
-    '/assets/sears-logo.png',
-    '/assets/baxter-logo.png',
-    '/assets/torys-logo.png',
-    '/assets/learn-frontend-logo.png',
-    '/assets/innovadiv-logo.png',
-    '/assets/nfcu-logo.jpg'
+    'federal-mogul.png',
+    'ge-capital-logo.png',
+    'hyatt-logo.png',
+    'tribune-logo.png',
+    'gt-logo.png',
+    'maestro-logo.png',
+    'sears-logo.png',
+    'baxter-logo.png',
+    'torys-logo.png',
+    'learn-frontend-logo.png',
+    'innovadiv-logo.png',
+    'nfcu-logo.jpg'
   ];
 
   return (
@@ -26,7 +26,7 @@ export default function CompanyHistory() {
           <div className="company-list-item" key={index}>
             <div className="contents">
 
-              <img src={src} />
+              <img src={`https://cdn.mattlo.io/${src}`} />
 
             </div>
           </div>
