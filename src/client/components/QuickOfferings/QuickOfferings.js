@@ -10,11 +10,11 @@ export default function QuickOfferings() {
           <div className="contents">
             <h3>Consultancy</h3>
             <p>
-              Modern companies hire me to figure out architecture, development effort, provide
-              technical strategy on domain-specific scenarios, and to act on new ideas to evolve
-              their team to the next frontier. I work side by side with the development team and
-              work with leadership to ensure key performance indicators are met and risk is managed
-              to meet deadlines.
+              Modern companies hire me to figure out their JavaScript architecture, development
+              effort, provide technical strategy on domain-specific scenarios, and to act on new
+              ideas to evolve their team to the next frontier. I work side by side with the
+              development team and work with leadership to ensure key performance indicators are met
+              and risk is managed to meet deadlines.
             </p>
           </div>
         </div>
