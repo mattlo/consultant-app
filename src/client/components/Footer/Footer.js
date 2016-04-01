@@ -9,7 +9,8 @@ export default function Footer() {
       </div>
       <div className="company-info">
         <div className="container">
-          Matt Lo is an independent consultant in Chicago, IL.
+          Matt Lo is an independent consultant in Chicago, IL. Matt Lo,
+          LLC {(new Date).getFullYear()}.
         </div>
       </div>
     </div>
