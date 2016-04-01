@@ -241,9 +241,9 @@ $table-border-color:            $gray-lighter !default;
 
 $btn-padding-x:                  1rem !default;
 $btn-padding-y:                  .375rem !default;
-$btn-font-weight:                normal !default;
+$btn-font-weight:                600 !default;
 
-$btn-primary-color:              #fff !default;
+$btn-primary-color:              #000 !default;
 $btn-primary-bg:                 $brand-primary !default;
 $btn-primary-border:             $btn-primary-bg !default;
 
@@ -251,9 +251,9 @@ $btn-secondary-color:            $gray-dark !default;
 $btn-secondary-bg:               #fff !default;
 $btn-secondary-border:           #ccc !default;
 
-$btn-info-color:                 #fff !default;
-$btn-info-bg:                    $brand-info !default;
-$btn-info-border:                $btn-info-bg !default;
+$btn-info-color:                 #000 !default;
+$btn-info-bg:                    transparent !default;
+$btn-info-border:                $gray-lighter !default;
 
 $btn-success-color:              #fff !default;
 $btn-success-bg:                 $brand-success !default;
