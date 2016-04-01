@@ -18,11 +18,7 @@ export default function DetailsPage() {
           <h2>Architecture and Development</h2>
 
           <p>
-            test
-          </p>
 
-          <p>
-            test
           </p>
 
           <h4>What's the process?</h4>
@@ -47,13 +43,25 @@ export default function DetailsPage() {
               future.
             </li>
           </ol>
+
+          <a className="btn btn-primary">Let's discuss the opportunities</a>
         </section>
 
         <section className="section">
           <h2>Remote Code Review</h2>
 
           <p>
-            test
+            Companies want a health snapshot of their codebase. Developers are sometimes too busy
+            working on features or deadlines to focus on a <strong>comprehensive codebase-wide
+            analysis and solutions</strong>. Or technical leadership may want an expert opinion on
+            the state to solve an immediate problem such as <strong>maintainability, feature
+            time-to-market, and performance.</strong>
+          </p>
+
+          <p>
+            Now is a perfect opportunity to obtain a <strong>customized code-review report</strong>
+            so you can focus on your next major version, with clear and complete goals on top of
+            your requirements.
           </p>
 
           <h4>How do we get started?</h4>
@@ -81,6 +89,8 @@ export default function DetailsPage() {
               I will send the company a <strong>fixed-rate invoice</strong> upon completion of work.
             </li>
           </ol>
+
+          <a className="btn btn-primary">Get a code review</a>
         </section>
 
         <section className="section">
@@ -89,7 +99,7 @@ export default function DetailsPage() {
           <h2>Company Workshops and Training</h2>
 
           <p>
-            Test
+
           </p>
 
           <h4>The approach</h4>
@@ -118,6 +128,8 @@ export default function DetailsPage() {
               participants a gift card to a preferred coffee shop.
             </li>
           </ol>
+
+          <a className="btn btn-primary">Let's talk about training</a>
 
         </section>
 
