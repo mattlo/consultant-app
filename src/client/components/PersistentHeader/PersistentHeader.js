@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import {getWindow} from '../../util/common';
 
 export default class PersistentHeader extends React.Component {
-  static headerScrollTrigger = 150;
+  static headerScrollTrigger = 75;
 
   constructor(props) {
     super(props);
@@ -72,8 +72,8 @@ export default class PersistentHeader extends React.Component {
         })}
       >
         <div className="container">
-          <div className="roi-text">
-            <i className="icon-javascript-alt" />
+          <a className="roi-text pull-xs-left" href="/">
+            <i className="icon-javascript-alt"/>
             <span className="text-rotation-container">
               {this.rotationText.map((text, index) => (
                 <span
@@ -86,7 +86,11 @@ export default class PersistentHeader extends React.Component {
               </span>
               ))}
             </span>
-          </div>
+          </a>
+
+          <a className="btn btn-primary btn-sm cta pull-xs-right">
+            Lets Talk!
+          </a>
         </div>
       </div>
     );

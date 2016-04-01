@@ -18,7 +18,6 @@ $rotationBreakpoint: 580px;
     font-size: 30px;
     vertical-align: middle;
     position: relative;
-    top: -3px;
     color: $brand-primary;
 
     @include media-breakpoint-down(sm) {
@@ -28,17 +27,21 @@ $rotationBreakpoint: 580px;
   }
 
   .roi-text {
-    padding-top: 20px;
-    line-height: 0px;
     font-size: 20px;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
 
     @include media-breakpoint-down(sm) {
       font-size: 16px;
+      padding-top: 5px;
     }
   }
 
   .text-rotation-container {
     position: relative;
+    line-height: 22px;
+    vertical-align: middle;
   }
 
   @media (min-width: $rotationBreakpoint + 1) {
@@ -58,11 +61,20 @@ $rotationBreakpoint: 580px;
       transition: all ease-in-out 0.3s;
       position: absolute;
       left: 0;
-      top: 12px;
+      top: 0;
 
       &.active {
         opacity: 1;
       }
+    }
+  }
+
+  .cta {
+    text-shadow: none;
+    margin-top: 10px;
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 7px;
     }
   }
 }
