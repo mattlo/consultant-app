@@ -16,6 +16,9 @@ export default function HomePage() {
 
       <div className="container">
         <QuickOfferings />
+
+        <hr />
+
         <CompanyHistory />
       </div>
 

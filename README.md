@@ -1,3 +1,3 @@
-# Marketing client and server for consulting
-Specifically for Matt Lo
-
+# mattlo-io
+A NodeJS website to help the public know who @mattlo is and how he can help
+engineering teams across globe.
