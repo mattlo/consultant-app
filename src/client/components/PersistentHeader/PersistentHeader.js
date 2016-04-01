@@ -73,7 +73,7 @@ export default class PersistentHeader extends React.Component {
       >
         <div className="container">
           <a className="roi-text pull-xs-left" href="/">
-            <i className="icon-javascript-alt"/>
+            <i className="icon-javascript-alt" />
             <span className="text-rotation-container">
               {this.rotationText.map((text, index) => (
                 <span
