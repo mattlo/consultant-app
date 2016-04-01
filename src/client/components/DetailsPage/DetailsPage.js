@@ -10,7 +10,7 @@ export default function DetailsPage() {
     <div className="details-page">
       <PersistentHeader />
       <HeroImage src="https://cdn.mattlo.io/coding-graphic.jpg">
-        Matt Lo: JavaScript Architect
+        Lets talk code; Matt Lo: JS Architect.
       </HeroImage>
 
       <div className="container">
