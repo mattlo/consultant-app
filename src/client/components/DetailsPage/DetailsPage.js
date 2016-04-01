@@ -4,6 +4,12 @@ import React from 'react';
 import HeroImage from '../HeroImage/HeroImage';
 import PersistentHeader from '../PersistentHeader/PersistentHeader';
 import Footer from '../Footer/Footer';
+import {store} from '../../data/index';
+import ContactModal from '../ContactModal/ContactModal';
+
+function handleModal(context) {
+  return () => store.dispatch({type: 'SHOW_MODAL', context});
+}
 
 export default function DetailsPage() {
   return (
@@ -44,7 +50,8 @@ export default function DetailsPage() {
             </li>
           </ol>
 
-          <a className="btn btn-primary">Let's discuss the opportunities</a>
+          <a className="btn btn-primary" onClick={handleModal('consulting')}>Let's discuss the
+            opportunities</a>
         </section>
 
         <section className="section">
@@ -90,7 +97,7 @@ export default function DetailsPage() {
             </li>
           </ol>
 
-          <a className="btn btn-primary">Get a code review</a>
+          <a className="btn btn-primary" onClick={handleModal('codereview')}>Get a code review</a>
         </section>
 
         <section className="section">
@@ -129,13 +136,16 @@ export default function DetailsPage() {
             </li>
           </ol>
 
-          <a className="btn btn-primary">Let's talk about training</a>
+          <a className="btn btn-primary" onClick={handleModal('training')}>
+            Let's talk about training
+          </a>
 
         </section>
 
       </div>
 
       <Footer />
+      <ContactModal />
     </div>
   );
 }

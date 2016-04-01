@@ -1,5 +1,10 @@
 import './Footer.scss';
 import React from 'react';
+import {store} from '../../data/index';
+
+function handleModal() {
+  store.dispatch({type: 'SHOW_MODAL'});
+}
 
 export default function Footer() {
   return (
@@ -21,7 +26,7 @@ export default function Footer() {
               </p>
             </div>
             <div className="col-md-4 col-xs-12">
-              <a className="availability">
+              <a className="availability" onClick={handleModal}>
                 I'm currently available for contracts for the next 6 months.
               </a>
             </div>

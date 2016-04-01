@@ -1,5 +1,10 @@
 import './LearnMoreLinks.scss';
 import React from 'react';
+import {store} from '../../data/index';
+
+function handleModal() {
+  return store.dispatch({type: 'SHOW_MODAL'});
+}
 
 export default function LearnMoreLinks() {
   return (
@@ -20,6 +25,7 @@ export default function LearnMoreLinks() {
       <span> </span>
 
       <a
+        onClick={handleModal}
         className="btn btn-primary"
       >
         Lets Talk!

@@ -2,6 +2,7 @@ import './PersistentHeader.scss';
 import React from 'react';
 import classnames from 'classnames';
 import {getWindow} from '../../util/common';
+import {store} from '../../data/index';
 
 export default class PersistentHeader extends React.Component {
   static headerScrollTrigger = 75;
@@ -64,6 +65,10 @@ export default class PersistentHeader extends React.Component {
     });
   }
 
+  handleModal = () => {
+    store.dispatch({type: 'SHOW_MODAL'});
+  };
+
   render() {
     return (
       <div
@@ -88,7 +93,10 @@ export default class PersistentHeader extends React.Component {
             </span>
           </a>
 
-          <a className="btn btn-primary btn-sm cta pull-xs-right">
+          <a
+            className="btn btn-primary btn-sm cta pull-xs-right"
+            onClick={this.handleModal}
+          >
             Lets Talk!
           </a>
         </div>

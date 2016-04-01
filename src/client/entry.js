@@ -8,7 +8,6 @@ function renderRoute(serverState) {
   });
 }
 
-
 iso.bootstrap(state => {
   renderRoute(state);
 });

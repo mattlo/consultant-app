@@ -6,6 +6,7 @@ import PersistentHeader from '../PersistentHeader/PersistentHeader';
 import Footer from '../Footer/Footer';
 import QuickOfferings from '../QuickOfferings/QuickOfferings';
 import CompanyHistory from '../CompanyHistory/CompanyHistory';
+import ContactModal from '../ContactModal/ContactModal';
 
 export default function HomePage() {
   return (
@@ -23,6 +24,7 @@ export default function HomePage() {
       </div>
 
       <Footer />
+      <ContactModal />
     </div>
   );
 }
