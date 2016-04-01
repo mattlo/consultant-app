@@ -1,5 +1,6 @@
 import './QuickOfferings.scss';
 import React from 'react';
+import LearnMoreLinks from '../LearnMoreLinks/LearnMoreLinks';
 
 export default function QuickOfferings() {
   return (
@@ -13,7 +14,7 @@ export default function QuickOfferings() {
               technical strategy on domain-specific scenarios, and to act on new ideas to evolve
               their team to the next frontier. I work side by side with the development team and
               work with leadership to ensure key performance indicators are met and risk is managed
-              to ensure deadlines.
+              to meet deadlines.
             </p>
           </div>
         </div>
@@ -43,6 +44,8 @@ export default function QuickOfferings() {
           </div>
         </div>
       </div>
+
+      <LearnMoreLinks />
     </div>
   );
 }
