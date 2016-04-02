@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import Hapi from 'hapi';
 import inert from 'inert';
 import ReactDOM from 'react-dom/server';
@@ -6,7 +7,7 @@ import Layout from './client/components/Layout/Layout';
 import path from 'path';
 import Router from './routes';
 import Iso from 'iso';
-import 'babel-polyfill';
+import {inbound, outbound} from './server/messages';
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -67,6 +68,18 @@ server.register([
         path: path.resolve(__dirname, 'assets')
       }
     }
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/api/message',
+    handler: inbound
+  });
+
+  server.route({
+    method: 'POST',
+    path: '/api/message',
+    handler: outbound
   });
 
   server.start((err) => {
