@@ -50,7 +50,7 @@ export default function DetailsPage() {
             </li>
           </ol>
 
-          <a className="btn btn-primary" onClick={handleModal('consulting')}>Let's discuss the
+          <a className="btn btn-primary" onClick={handleModal('Consulting')}>Let's discuss the
             opportunities</a>
         </section>
 
@@ -97,7 +97,7 @@ export default function DetailsPage() {
             </li>
           </ol>
 
-          <a className="btn btn-primary" onClick={handleModal('codereview')}>Get a code review</a>
+          <a className="btn btn-primary" onClick={handleModal('Code Review')}>Get a code review</a>
         </section>
 
         <section className="section">
@@ -136,7 +136,7 @@ export default function DetailsPage() {
             </li>
           </ol>
 
-          <a className="btn btn-primary" onClick={handleModal('training')}>
+          <a className="btn btn-primary" onClick={handleModal('Training')}>
             Let's talk about training
           </a>
 

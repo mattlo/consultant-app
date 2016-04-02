@@ -1,0 +1,55 @@
+@import '../../libs/bootstrap-config.scss';
+
+.contact-modal {
+
+}
+
+.contact-methods {
+  margin-bottom: 15px;
+}
+
+.contact-method {
+  $size: 30px;
+
+  @extend %flexbox;
+  background: $gray-dark;
+  border-radius: $border-radius;
+  width: 100%;
+  margin-bottom: 5px;
+
+  .indicator {
+    $border-size: 2px;
+
+    @include flex(0, 0, $size);
+    height: $size;
+    margin-right: 10px;
+    border-radius: $border-radius;
+    background: $brand-primary;
+    color: #000;
+    border: solid $border-size #000;
+    line-height: $size - ($border-size * 2);
+    text-align: center;
+
+
+    i {
+      vertical-align: middle;
+    }
+  }
+
+  .contents {
+    @include flex(1);
+    line-height: $size - 1;
+    display: block;
+    color: #fff;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .phone-number {
+    &:after {
+      content: '(630) 621-7671'; // I'm assuming this will work for anti-bots :/
+    }
+  }
+}

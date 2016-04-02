@@ -6,7 +6,8 @@ import {connect} from 'react-redux';
 export default class BaseModal extends React.Component {
   static propTypes = {
     children: React.PropTypes.node,
-    showContactModal: React.PropTypes.object
+    showContactModal: React.PropTypes.object,
+    className: React.PropTypes.string
   };
 
   static Y_PADDING = 50;
@@ -42,14 +43,17 @@ export default class BaseModal extends React.Component {
       case 'base-modal-chrome':
         store.dispatch({type: 'HIDE_MODAL'});
         break;
-      default: return;
+      default:
+        return;
     }
   };
 
   render() {
+    const cmpClsName = this.props.className ? this.props.className : '';
+
     return (
       <div
-        className="base-modal"
+        className={`base-modal ${cmpClsName}`}
         onClick={this.handleShadowClick}
         style={{display: this.props.showContactModal.visibility ? 'block' : undefined}}
       >
