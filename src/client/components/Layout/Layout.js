@@ -19,6 +19,7 @@ export default function Layout({body}) {
         />
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.3.0/font-mfizz.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,200,400italic,600" rel="stylesheet" type="text/css" />
 
         {showDistAssets ?
