@@ -22,6 +22,8 @@ export function messsageParse(msg) {
  * @param res
  */
 export function outbound(req, res) {
+  console.log(req);
+
   // immediate response to public, regardless of error
   res({
     data: {
@@ -48,7 +50,12 @@ export function outbound(req, res) {
  */
 export function publicInbound(req, res) {
   console.log(queue);
-  res('test');
+
+  res({
+    data: {
+      type: 'message'
+    }
+  }).code(201);
 }
 
 /**
