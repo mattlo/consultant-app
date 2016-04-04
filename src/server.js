@@ -7,7 +7,8 @@ import Layout from './client/components/Layout/Layout';
 import path from 'path';
 import Router from './routes';
 import Iso from 'iso';
-import {outbound, publicInbound, publicOutbound} from './server/messages';
+import {
+  outbound, publicInbound, publicOutbound} from './server/messages';
 
 // Create a server with a host and port
 const server = new Hapi.Server();

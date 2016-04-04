@@ -1,19 +1,46 @@
 import https from 'https';
 
-const slackOutgoingToken = process.env.SLACK_OUTGOING_TOKEN || '';
-const slackIncomingPath = process.env.SLACK_INCOMING_PATH;
-const queue = [];
-const MSG_PATTERN = /q\s(\w+)\s(.*)/;
+let slackOutgoingToken = process.env.SLACK_OUTGOING_TOKEN || '';
+let slackIncomingPath = process.env.SLACK_INCOMING_PATH;
+let queue = [];
+const MSG_PATTERN = /q\s(\w+)\s([\s\S]*)/;
+
+/**
+ * @param q
+ */
+export function setQueue(q) {
+  queue = q;
+}
+
+/**
+ * @returns {Array}
+ */
+export function getQueue() {
+  return queue;
+}
+
+/**
+ * @param v
+ */
+export function setSlackOutgoingToken(v) {
+  slackOutgoingToken = v;
+}
+
+/**
+ * @param v
+ */
+export function setSlackIncomingPath(v) {
+  slackIncomingPath = v;
+}
 
 /**
  * Parses message
  * @param msg
  */
-export function messsageParse(msg) {
+export function messageParse(msg) {
   const [, token, message] = msg.match(MSG_PATTERN);
-  const name = 'Matt';
 
-  return {token, message, name};
+  return {token, message};
 }
 
 /**
@@ -34,7 +61,11 @@ export function outbound(req, res) {
   // validate payload
   if (data.token === slackOutgoingToken) {
     // parse message and queue it
-    queue.push(messsageParse(data.text));
+    setQueue([...queue, {
+      ...messageParse(data.text),
+      name: 'Matt'
+    }]);
+
     console.info('Slack message received');
   } else {
     console.warn('invalid Slack token on message request');
@@ -43,16 +74,25 @@ export function outbound(req, res) {
 
 /**
  * Client polls inbound requests, sends request data from queue
+ *
+ * @TODO messages can be brute forced and intercepted if they weren't received by the client
  * @param req
  * @param res
  */
 export function publicInbound(req, res) {
-  console.log(queue);
+  const token = req.payload.token || '';
+
+  // extract data
+  const data = queue.filter(msg => msg.token === token);
+
+  // remove items
+  setQueue(queue.filter(msg => msg.token !== token));
 
   res({
-    data: {
+    data: data.map((row) => ({
+      ...row || {},
       type: 'message'
-    }
+    }))
   }).code(201);
 }
 
@@ -83,7 +123,8 @@ export function publicOutbound(req, res) {
     port: '443',
     path: `/services${slackIncomingPath}`,
     method: 'POST'
-  }, () => {});
+  }, () => {
+  });
 
   slackReq.on('error', (e) => {
     console.error(e);
@@ -95,3 +136,6 @@ export function publicOutbound(req, res) {
 
   slackReq.end();
 }
+
+setSlackOutgoingToken(process.env.SLACK_OUTGOING_TOKEN || '');
+setSlackIncomingPath(process.env.SLACK_INCOMING_PATH);
