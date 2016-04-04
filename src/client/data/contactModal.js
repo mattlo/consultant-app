@@ -10,7 +10,7 @@ export function modalReducer(state = {visibility: false}, action) {
 
 export function messageReducer(state = [], action) {
   if (action.type === 'ADD_MESSAGES') {
-    return [...state, action.messages];
+    return [...state, ...action.messages];
   }
 
   return state;

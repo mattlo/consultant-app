@@ -3,11 +3,18 @@ import React from 'react';
 import BaseModal from '../BaseModal/BaseModal';
 import {connect} from 'react-redux';
 import Chat from '../Chat/Chat';
+import shortid from 'shortid';
 
 class ContactModal extends React.Component {
   static propTypes = {
     contactModal: React.PropTypes.object.isRequired
   };
+
+  constructor(props) {
+    super(props);
+
+    this.token = shortid.generate();
+  }
 
   initChatHandler() {
     // @TODO load data from local storage
@@ -53,7 +60,12 @@ class ContactModal extends React.Component {
           </div>
         </div>
 
-        <Chat />
+        <h3>Live Chat with Matt</h3>
+
+        <Chat
+          token={this.token}
+          name="Bob"
+        />
       </BaseModal>
     );
   }

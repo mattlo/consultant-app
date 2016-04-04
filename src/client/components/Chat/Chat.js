@@ -11,14 +11,22 @@ class Chat extends React.Component {
     name: React.PropTypes.string
   };
 
-  static POLL_INTERVAL = 1000;
+  static POLL_INTERVAL = 2000;
 
   componentWillMount() {
-    this.poll();
+    this.setState({
+      textbox: ''
+    });
+
+    if (this.canPoll()) {
+      this.poll();
+    }
   }
 
   componentDidUpdate() {
-    this.poll();
+    if (this.canPoll()) {
+      this.poll();
+    }
   }
 
   componentWillUnmount() {
@@ -28,12 +36,10 @@ class Chat extends React.Component {
   }
 
   poll() {
-    if (this.canPoll()) {
-      console.info('starting chat poll');
-      this.interval = setTimeout(() => {
-        this.receive(this.props.token);
-      }, Chat.POLL_INTERVAL);
-    }
+    this.interval = setTimeout(() => {
+      this.receive(this.props.token);
+      this.poll();
+    }, Chat.POLL_INTERVAL);
   }
 
   canPoll() {
@@ -52,10 +58,54 @@ class Chat extends React.Component {
     store.dispatch(getMessagesAction(this.props.token));
   }
 
+  handleTextboxChange = (e) => {
+    this.setState({
+      textbox: e.target.value
+    });
+  };
+
+  handleButtonSend = () => {
+    this.send(this.state.textbox);
+
+    // reset input box state
+    this.setState({
+      textbox: ''
+    });
+  };
+
+  renderMessages() {
+    return (
+      <div className="chat-messages">
+        {this.props.messages.map((m, index) => (
+          <div key={index}>
+            {m.name} - {m.message}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  renderTextBox() {
+    return (
+      <div className="chat-textbox">
+        <input
+          type="text"
+          value={this.state.textbox}
+          onChange={this.handleTextboxChange}
+        />
+
+        <button type="button" onClick={this.handleButtonSend}>
+          Send
+        </button>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="chat">
-        &nbsp;
+        {this.renderMessages()}
+        {this.renderTextBox()}
       </div>
     );
   }
