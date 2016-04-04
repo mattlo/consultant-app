@@ -10,14 +10,70 @@ class ContactModal extends React.Component {
     contactModal: React.PropTypes.object.isRequired
   };
 
-  constructor(props) {
-    super(props);
-
-    this.token = shortid.generate();
+  componentWillMount() {
+    this.setState({
+      name: '',
+      token: shortid.generate(),
+      showChat: false
+    });
   }
 
-  initChatHandler() {
-    // @TODO load data from local storage
+  handleName = (e) => {
+    this.setState({
+      name: e.target.value
+    });
+  };
+
+  handleChatInit = (e) => {
+    e.preventDefault();
+
+    if (this.state.name.length < 2) {
+      alert('Please have a name greater than 2 characters');
+      return;
+    }
+
+    this.setState({
+      showChat: true
+    });
+  };
+
+  renderNameCapture() {
+    return (
+      <div className="name-prompt">
+        <form onSubmit={this.handleChatInit}>
+          <div className="row">
+            <div className="col-sm-6 col-xs-12">
+              <div className="form-group">
+                <label>Enter your name:</label>
+                <input
+                  type="text"
+                  onChange={this.handleName}
+                  placeholder="Enter name"
+                  className="form-control"
+                />
+                <small className="text-muted disclaimer">
+                  Your name and messages are encrypted and deleted after
+                  your session ends.
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <button className="btn btn-primary" type="submit">
+            Lets start the conversation
+          </button>
+        </form>
+      </div>
+    );
+  }
+
+  renderChatClient() {
+    return (
+      <Chat
+        token={this.state.token}
+        name={this.state.name}
+      />
+    );
   }
 
   render() {
@@ -62,10 +118,7 @@ class ContactModal extends React.Component {
 
         <h3>Live Chat with Matt</h3>
 
-        <Chat
-          token={this.token}
-          name="Bob"
-        />
+        {this.state.showChat ? this.renderChatClient() : this.renderNameCapture()}
       </BaseModal>
     );
   }

@@ -1,7 +1,11 @@
 @import '../../libs/bootstrap-config.scss';
 
 .contact-modal {
-
+  .disclaimer {
+    line-height: 16px;
+    display: block;
+    margin-top: 5px;
+  }
 }
 
 .contact-methods {
