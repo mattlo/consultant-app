@@ -89,6 +89,12 @@ server.register([
     handler: publicOutbound
   });
 
+  server.route({
+    method: 'GET',
+    path: '/favicon.ico',
+    handler: (req, res) => res.file(path.resolve(__dirname, 'assets', 'favicon.ico/favicon.ico'))
+  });
+
   server.start((err) => {
     if (err) {
       throw err;

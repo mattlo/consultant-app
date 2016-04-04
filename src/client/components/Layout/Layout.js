@@ -27,7 +27,8 @@ export default function Layout({body}) {
         : null}
 
         <title>JavaScript Architecture, Implementation, and Training by Matt Lo</title>
-
+        <link rel="shortcut icon" href="https://cdn.mattlo.io/favicons/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://cdn.mattlo.io/favicons/favicon.ico" type="image/x-icon" />
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{__html: body}} />
