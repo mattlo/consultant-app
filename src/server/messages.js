@@ -22,8 +22,6 @@ export function messsageParse(msg) {
  * @param res
  */
 export function outbound(req, res) {
-  console.log(req);
-
   // immediate response to public, regardless of error
   res({
     data: {
@@ -31,7 +29,7 @@ export function outbound(req, res) {
     }
   }).code(201);
 
-  const data = JSON.parse(req.payload);
+  const data = req.payload;
 
   // validate payload
   if (data.token === slackOutgoingToken) {
@@ -71,7 +69,7 @@ export function publicOutbound(req, res) {
     }
   }).code(201);
 
-  const data = req.payload;
+  const data = JSON.parse(req.payload);
 
   if (!slackIncomingPath) {
     console.error('SLACK_INCOMING_PATH needs to be defined as an environment variable');
