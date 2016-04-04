@@ -111,7 +111,7 @@ export function publicOutbound(req, res) {
     }
   }).code(201);
 
-  const data = JSON.parse(req.payload);
+  const data = req.payload;
 
   if (!slackIncomingPath) {
     console.error('SLACK_INCOMING_PATH needs to be defined as an environment variable');
@@ -133,7 +133,7 @@ export function publicOutbound(req, res) {
   });
 
   slackReq.write(JSON.stringify({
-    text: `<@mlo> - *${data.token}* - ${data.name}: ${data.message}`
+    text: `<@mlo>\n${data.token}\n${data.name}: ${data.message}`
   }));
 
   slackReq.end();
