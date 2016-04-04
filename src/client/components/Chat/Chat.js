@@ -17,7 +17,9 @@ class Chat extends React.Component {
     this.setState({
       textbox: ''
     });
+  }
 
+  componentDidMount() {
     if (this.canPoll()) {
       this.poll();
     }
