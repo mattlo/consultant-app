@@ -1,4 +1,5 @@
 import https from 'https';
+import {encrypt, decrypt} from './security';
 
 let slackOutgoingToken = process.env.SLACK_OUTGOING_TOKEN || '';
 let slackIncomingPath = process.env.SLACK_INCOMING_PATH;
@@ -40,7 +41,10 @@ export function setSlackIncomingPath(v) {
 export function messageParse(msg) {
   const [, token, message] = msg.match(MSG_PATTERN);
 
-  return {token, message};
+  return {
+    token,
+    message: encrypt(message)
+  };
 }
 
 /**
@@ -60,13 +64,15 @@ export function outbound(req, res) {
 
   // validate payload
   if (data.token === slackOutgoingToken) {
+    const userPayload = messageParse(data.text);
+
     // parse message and queue it
     setQueue([...queue, {
-      ...messageParse(data.text),
+      ...userPayload,
       name: 'Matt'
     }]);
 
-    console.info('Slack message received');
+    console.info(`Slack message received from Matt to ${userPayload.token}`);
   } else {
     console.warn('invalid Slack token on message request');
   }
@@ -89,15 +95,20 @@ export function publicInbound(req, res) {
   setQueue(queue.filter(msg => msg.token !== token));
 
   res({
-    data: data.map((row) => ({
-      ...row || {},
-      type: 'message'
-    }))
+    data: data
+      .map((row) => ({
+        ...row || {},
+        type: 'message'
+      }))
+      .map(row => ({
+        ...row,
+        message: decrypt(row.message)
+      }))
   }).code(201);
 }
 
 /**
- * Sends user's response to Slack
+ * Sends user's response to Slack securely
  *
  * @TODO can be abused publicly
  * @param req
@@ -119,7 +130,7 @@ export function publicOutbound(req, res) {
   }
 
   // issue request
-  console.info(`Sending slack request from: ${data.token} - ${data.name}`);
+  console.info(`Sending slack request from: ${data.token} to ${data.name}`);
   const slackReq = https.request({
     host: 'hooks.slack.com',
     port: '443',
