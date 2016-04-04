@@ -66,7 +66,14 @@ class Chat extends React.Component {
     });
   };
 
-  handleButtonSend = () => {
+  handleButtonSend = (e) => {
+    e.preventDefault();
+
+    if (this.state.textbox.length === 0) {
+      alert('You must have a message to send!');
+      return;
+    }
+
     this.send(this.state.textbox);
 
     // reset input box state
@@ -89,17 +96,27 @@ class Chat extends React.Component {
 
   renderTextBox() {
     return (
-      <div className="chat-textbox">
-        <input
-          type="text"
-          value={this.state.textbox}
-          onChange={this.handleTextboxChange}
-        />
-
-        <button type="button" onClick={this.handleButtonSend}>
-          Send
-        </button>
-      </div>
+      <form
+        onSubmit={this.handleButtonSend}
+        className="chat-textbox"
+      >
+        <div className="textbox">
+          <input
+            type="text"
+            className="form-control form-control-sm"
+            value={this.state.textbox}
+            onChange={this.handleTextboxChange}
+          />
+        </div>
+        <div className="send">
+          <button
+            type="submit"
+            className="btn btn-primary btn-sm"
+          >
+            Send
+          </button>
+        </div>
+      </form>
     );
   }
 
