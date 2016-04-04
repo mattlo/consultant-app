@@ -63,7 +63,10 @@ if (TARGET === 'build' || !TARGET) {
       ]
     },
     plugins: [
-      new ExtractTextPlugin('bundle.css')
+      new ExtractTextPlugin('bundle.css'),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': '"production"'
+      })
     ]
   }, {
     allChunks: true
