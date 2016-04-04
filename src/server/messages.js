@@ -98,6 +98,8 @@ export function publicInbound(req, res) {
 
 /**
  * Sends user's response to Slack
+ *
+ * @TODO can be abused publicly
  * @param req
  * @param res
  */

@@ -72,8 +72,8 @@ server.register([
   });
 
   server.route({
-    method: 'GET',
-    path: '/api/public-message',
+    method: 'POST',
+    path: '/api/public-inbound-message',
     handler: publicInbound
   });
 
@@ -85,7 +85,7 @@ server.register([
 
   server.route({
     method: 'POST',
-    path: '/api/public-message',
+    path: '/api/public-outbound-message',
     handler: publicOutbound
   });
 
