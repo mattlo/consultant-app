@@ -2,6 +2,7 @@ import './ContactModal.scss';
 import React from 'react';
 import BaseModal from '../BaseModal/BaseModal';
 import {connect} from 'react-redux';
+import Chat from '../Chat/Chat';
 
 class ContactModal extends React.Component {
   static propTypes = {
@@ -9,7 +10,7 @@ class ContactModal extends React.Component {
   };
 
   initChatHandler() {
-
+    // @TODO load data from local storage
   }
 
   render() {
@@ -51,6 +52,8 @@ class ContactModal extends React.Component {
             </div>
           </div>
         </div>
+
+        <Chat />
       </BaseModal>
     );
   }

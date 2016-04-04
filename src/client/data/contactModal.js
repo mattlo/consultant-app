@@ -1,3 +1,5 @@
+import request from 'superagent-bluebird-promise';
+
 export function modalReducer(state = {visibility: false}, action) {
   switch (action.type) {
     case 'SHOW_MODAL': return {visibility: true, context: action.context};
