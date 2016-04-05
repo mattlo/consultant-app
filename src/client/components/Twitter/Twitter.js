@@ -63,11 +63,10 @@ export default class Twitter extends React.Component {
 
       // imported code from https://dev.twitter.com/web/javascript/loading
       return ((d, s, id) => {
-        let js;
         const fjs = d.getElementsByTagName(s)[0];
         const t = window.twttr || {};
         if (d.getElementById(id)) return t;
-        js = d.createElement(s);
+        const js = d.createElement(s);
         js.id = id;
         js.src = 'https://platform.twitter.com/widgets.js';
         fjs.parentNode.insertBefore(js, fjs);
