@@ -39,7 +39,10 @@ export function sendMessageAction(payload) {
     .then(() => {
       dispatch({
         type: 'ADD_MESSAGES',
-        messages: [payload]
+        messages: [{
+          ...payload,
+          user: true
+        }]
       });
     })
     .catch(e => {

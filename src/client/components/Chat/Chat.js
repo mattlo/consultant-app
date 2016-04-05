@@ -3,31 +3,39 @@ import React from 'react';
 import {store} from '../../data/index';
 import {connect} from 'react-redux';
 import {getMessagesAction, sendMessageAction} from '../../data/contactModal';
+import Textarea from 'react-textarea-autosize';
 
 class Chat extends React.Component {
   static propTypes = {
     token: React.PropTypes.string,
     messages: React.PropTypes.array,
-    name: React.PropTypes.string
+    name: React.PropTypes.string,
+    initValue: React.PropTypes.string
   };
 
   static POLL_INTERVAL = 2000;
 
   componentWillMount() {
     this.setState({
-      textbox: ''
+      textbox: this.props.initValue
     });
   }
 
   componentDidMount() {
+    this.refs.chattextbox.focus();
+
     if (this.canPoll()) {
       this.poll();
     }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(props) {
     if (this.canPoll()) {
       this.poll();
+    }
+
+    if (props.messages.length < this.props.messages.length) {
+      this.refs.chatMessages.scrollTop = Number.MAX_SAFE_INTEGER;
     }
   }
 
@@ -69,7 +77,7 @@ class Chat extends React.Component {
   handleButtonSend = (e) => {
     e.preventDefault();
 
-    if (this.state.textbox.length === 0) {
+    if (this.state.textbox.trim().length === 0) {
       alert('You must have a message to send!');
       return;
     }
@@ -82,12 +90,19 @@ class Chat extends React.Component {
     });
   };
 
+  handleKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      e.stopPropagation();
+      this.handleButtonSend(e);
+    }
+  };
+
   renderMessages() {
     return (
-      <div className="chat-messages">
+      <div className="chat-messages" ref="chatMessages">
         {this.props.messages.map((m, index) => (
-          <div key={index}>
-            {m.name} - {m.message}
+          <div className="message" key={index}>
+            {!m.user ? <strong>{m.name}</strong> : m.name} - {m.message}
           </div>
         ))}
       </div>
@@ -101,11 +116,13 @@ class Chat extends React.Component {
         className="chat-textbox"
       >
         <div className="textbox">
-          <input
-            type="text"
+          <Textarea
             className="form-control form-control-sm"
             value={this.state.textbox}
+            placeholder="Enter a message..."
             onChange={this.handleTextboxChange}
+            onKeyDown={this.handleKeyDown}
+            ref="chattextbox"
           />
         </div>
         <div className="send">
@@ -123,7 +140,7 @@ class Chat extends React.Component {
   render() {
     return (
       <div className="chat">
-        {this.renderMessages()}
+        {this.props.messages.length > 0 ? this.renderMessages() : undefined}
         {this.renderTextBox()}
       </div>
     );
@@ -133,6 +150,7 @@ class Chat extends React.Component {
 export default connect((state, props) => ({
   messages: state.messageReducer,
   name: props.name,
-  token: props.token
+  token: props.token,
+  initValue: props.initValue
 }))(Chat);
 

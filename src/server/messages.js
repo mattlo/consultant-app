@@ -69,7 +69,7 @@ export function outbound(req, res) {
     // parse message and queue it
     setQueue([...queue, {
       ...userPayload,
-      name: 'Matt'
+      name: 'Matt Lo'
     }]);
 
     console.info(`Slack message received from Matt to ${userPayload.token}`);

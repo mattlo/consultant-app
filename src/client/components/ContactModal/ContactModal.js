@@ -68,10 +68,17 @@ class ContactModal extends React.Component {
   }
 
   renderChatClient() {
+    let initValue = 'Hey Matt';
+
+    if (this.props.contactModal.context) {
+      initValue += `I'm interested in ${this.props.contactModal.context}`;
+    }
+
     return (
       <Chat
         token={this.state.token}
         name={this.state.name}
+        initValue={initValue}
       />
     );
   }
