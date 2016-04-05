@@ -61,7 +61,6 @@ export default class PersistentHeader extends React.Component {
       rotationIndex = 0;
     }
 
-    
     this.setState({
       rotationIndex
     });
