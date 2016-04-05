@@ -19,7 +19,7 @@ export default function CompanyHistory() {
 
   return (
     <div className="company-history">
-      <h2>I've worked with dozens of companies such as:</h2>
+      <h2 className="text-xs-center">I've worked with dozens of companies such as:</h2>
 
       <div className="company-list clearfix">
         {logos.map((src, index) => (
