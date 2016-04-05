@@ -82,8 +82,8 @@ export default function DetailsPage() {
               company is in demand for.
             </li>
             <li>
-              Agree on <strong>availability, start and end date, hourly rate, work acceptance
-              criteria, and invoice net terms</strong>
+              Agree on <strong>availability, start and end date, travel, hourly rate, work
+              acceptance criteria, and invoice net terms</strong>
             </li>
             <li>
               The company will provide their <strong>master service agreement and/or work
@@ -157,6 +157,16 @@ export default function DetailsPage() {
             individuals in all kinds of specific libraries like React and Hapi, architecture and
             design patterns, or company specific tangible skillsets that complement their technical
             goals.
+          </p>
+
+          <p>
+            Suggested topics: <strong>Modernizing front-end, multi-language SOAs, code efficiencies,
+            using devtools, devops, architecture, or a specific technology (Hapi, React, Angular,
+            AWS, etc...).</strong>
+            I'm flexible with any duration type of engagement (a couple hours, per day, for a week;
+            whole days, half days). All material is authorized before actual training commences, I
+            can
+            also integrate domain specific content to increase company relevancy.
           </p>
 
           <h4>The approach</h4>

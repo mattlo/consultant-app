@@ -61,6 +61,7 @@
     "react-routing": "0.0.7",
     "react-textarea-autosize": "^3.3.1",
     "react-transform-hmr": "^1.0.4",
+    "react-twitter-widgets": "^0.2.4",
     "redux": "^3.3.1",
     "redux-thunk": "^2.0.1",
     "sass-flex-mixin": "^1.0.0",
