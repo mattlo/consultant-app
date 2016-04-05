@@ -19,7 +19,7 @@ export default function LearnMoreLinks() {
         className="btn btn-info"
         href="/experience-and-consultancy"
       >
-        Learn More
+        <i className="fa fa-info-circle" />&nbsp; Learn More
       </a>
 
       <span> </span>
@@ -28,7 +28,7 @@ export default function LearnMoreLinks() {
         onClick={handleModal}
         className="btn btn-primary"
       >
-        Lets Talk!
+        <i className="fa fa-commenting" /> Lets Talk!
       </a>
     </div>
   );

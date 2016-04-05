@@ -27,7 +27,7 @@ export default function Footer() {
             </div>
             <div className="col-md-4 col-xs-12">
               <a className="availability" onClick={handleModal}>
-                I'm currently available for contracts for the next 6 months.
+                I'm currently available for projects for the next 6 months.
               </a>
             </div>
           </div>

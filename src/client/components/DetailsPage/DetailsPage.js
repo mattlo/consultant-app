@@ -49,7 +49,7 @@ export default function DetailsPage() {
         </section>
 
         <section className="section">
-          <h2><i className="fa fa-code" /> Architecture and Development</h2>
+          <h2><i className="fa fa-code" /> Architecture, Development, Advisor</h2>
 
           <p>
             If you have an efficiency problem, a deadline problem, a knowledge problem, or a problem
@@ -63,14 +63,15 @@ export default function DetailsPage() {
           <p>
             My proficiency revolves around several architectures including services oriented (SOA),
             monolithic, and micro services oriented over REST. <strong>I'm well verse in agile and
-            waterfall and usually work closely with product owners, developers, UX, and the
+            waterfall. I usually work closely with product owners, developers, UX, and the
             leadership team.</strong>
           </p>
 
           <p>
             When we talk, <strong>ask about my prior engagements, case studies, or anything
             else.</strong> I have a Reddit-like AMA policy! You can even ask me how to solve your
-            architectural problems right on the call.
+            architectural problems right on the call. <strong>I've worked directly with CTOs, VPs,
+            Directors of Technology, software managers, and other consultants.</strong>
           </p>
 
           <h4>What's the process?</h4>
@@ -94,7 +95,7 @@ export default function DetailsPage() {
             </li>
           </ol>
 
-          <a className="btn btn-primary" onClick={handleModal('Consulting')}>
+          <a className="btn btn-primary" onClick={handleModal('Architecture and Development')}>
             <i className="fa fa-code" /> Let's discuss the opportunities
           </a>
         </section>
@@ -142,7 +143,7 @@ export default function DetailsPage() {
             </li>
           </ol>
 
-          <a className="btn btn-primary" onClick={handleModal('Code Review')}>
+          <a className="btn btn-primary" onClick={handleModal('Code Reviews')}>
             <i className="fa fa-file-archive-o" /> Get a code review
           </a>
         </section>

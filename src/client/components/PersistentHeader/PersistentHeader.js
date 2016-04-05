@@ -97,7 +97,7 @@ export default class PersistentHeader extends React.Component {
             className="btn btn-primary btn-sm cta pull-xs-right"
             onClick={this.handleModal}
           >
-            Lets Talk!
+            <i className="fa fa-commenting" /> Lets Talk!
           </a>
         </div>
       </div>

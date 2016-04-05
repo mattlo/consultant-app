@@ -8,7 +8,7 @@ export default function QuickOfferings() {
       <div className="row">
         <div className="col-xs-12">
           <div className="contents">
-            <h3>Consultancy</h3>
+            <h3><i className="fa fa-code" /> Consultancy</h3>
             <p>
               Modern companies hire me to figure out their JavaScript architecture, development
               effort, provide technical strategy on domain-specific scenarios, and to act on new
@@ -22,7 +22,7 @@ export default function QuickOfferings() {
       <div className="row">
         <div className="col-md-6">
           <div className="contents">
-            <h3>Remote Code Reviews</h3>
+            <h3><i className="fa fa-file-archive-o" /> Remote Code Reviews</h3>
             <p>
               I provide customized reports that identifies levels of technical debt,
               maintainability, ability to scale, and suggestions to improve time-to-market. Your
@@ -33,7 +33,7 @@ export default function QuickOfferings() {
         </div>
         <div className="col-md-6">
           <div className="contents">
-            <h3>Training and Workshops</h3>
+            <h3><i className="fa fa-graduation-cap" /> Training and Workshops</h3>
             <p>
               I work with agencies and product companies to help modernize their workflow.
               Often times teams are too busy to maintain their career training. I provide everything
