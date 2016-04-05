@@ -10,3 +10,9 @@ export function isTouchDevice() {
 
   return 'ontouchstart' in window || navigator.maxTouchPoints;
 }
+
+export function scrollY() {
+  const window = getWindow();
+
+  return window.scrollY || window.pageYOffset;
+}

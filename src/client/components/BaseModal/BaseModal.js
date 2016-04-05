@@ -2,6 +2,7 @@ import './BaseModal.scss';
 import React from 'react';
 import {store} from '../../data/index';
 import {connect} from 'react-redux';
+import {scrollY} from '../../util/common';
 
 export default class BaseModal extends React.Component {
   static propTypes = {
@@ -18,7 +19,7 @@ export default class BaseModal extends React.Component {
 
   componentWillReceiveProps(props) {
     if (props.showContactModal) {
-      this.setState({yPosition: window.scrollY + BaseModal.Y_PADDING});
+      this.setState({yPosition: scrollY() + BaseModal.Y_PADDING});
     }
   }
 

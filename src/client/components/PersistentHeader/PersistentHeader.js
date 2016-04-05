@@ -3,6 +3,7 @@ import React from 'react';
 import classnames from 'classnames';
 import {getWindow} from '../../util/common';
 import {store} from '../../data/index';
+import {scrollY} from '../../util/common';
 
 export default class PersistentHeader extends React.Component {
   static headerScrollTrigger = 75;
@@ -42,7 +43,7 @@ export default class PersistentHeader extends React.Component {
   };
 
   activateHeader() {
-    return getWindow().scrollY >= PersistentHeader.headerScrollTrigger;
+    return scrollY() >= PersistentHeader.headerScrollTrigger;
   }
 
   runRotationTimer() {
@@ -60,6 +61,7 @@ export default class PersistentHeader extends React.Component {
       rotationIndex = 0;
     }
 
+    
     this.setState({
       rotationIndex
     });
