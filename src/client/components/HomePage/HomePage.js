@@ -7,12 +7,25 @@ import Footer from '../Footer/Footer';
 import QuickOfferings from '../QuickOfferings/QuickOfferings';
 import CompanyHistory from '../CompanyHistory/CompanyHistory';
 import ContactModal from '../ContactModal/ContactModal';
-import {Timeline} from 'react-twitter-widgets';
+import Twitter from '../Twitter/Twitter';
 
 const MONTHS = [
   'January', 'February', 'March', 'April', 'May', 'June', 'July',
   'August', 'September', 'October', 'November', 'December'
 ];
+
+function renderTweets() {
+  if (!process.env.RC) {
+    return '';
+  }
+
+  return (
+    <Twitter
+      id="717411293062410240"
+      screenname="Matt_Lo"
+    />
+  );
+}
 
 export default function HomePage() {
   return (
@@ -74,15 +87,7 @@ export default function HomePage() {
             </ul>
           </div>
           <div className="col-sm-6">
-            <Timeline
-              widgetId={'717411293062410240'}
-              options={{
-                username: 'Matt_Lo',
-                tweetLimit: 2,
-                width: 'auto',
-                cards: 'hidden'
-              }}
-            />
+            {renderTweets()}
           </div>
         </div>
       </div>
