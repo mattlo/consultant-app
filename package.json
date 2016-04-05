@@ -8,7 +8,7 @@
     "webpack-start": "webpack-dev-server --port 8002",
     "start": "NODE_ENV=dev babel-node src/server.js",
     "test": "mocha --compilers js:babel-register --recursive ./test/src",
-    "lint": "eslint 'src/**/*.js'; eslint 'test/**/*.js'"
+    "lint": "eslint 'src/**/*.js' && eslint 'test/**/*.js'"
   },
   "repository": {
     "type": "git",
