@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer';
 import QuickOfferings from '../QuickOfferings/QuickOfferings';
 import CompanyHistory from '../CompanyHistory/CompanyHistory';
 import ContactModal from '../ContactModal/ContactModal';
-import {Timeline} from 'react-twitter-widgets'
+import {Timeline} from 'react-twitter-widgets';
 
 const MONTHS = [
   'January', 'February', 'March', 'April', 'May', 'June', 'July',
