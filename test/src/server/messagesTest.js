@@ -10,6 +10,7 @@ import {
   getQueue
 } from '../../../src/server/messages';
 import Response from 'hapi/lib/response';
+import {decrypt} from '../../../src/server/security';
 
 describe('Messages I/O', () => {
   function mockHapiHandler(payload) {
@@ -34,14 +35,14 @@ describe('Messages I/O', () => {
     const msg = messageParse('q t0k3n Some Message');
 
     assert.equal(msg.token, 't0k3n');
-    assert.equal(msg.message, 'Some Message');
+    assert.equal(decrypt(msg.message), 'Some Message');
   });
 
   it('should parse an incoming Slack message with multiple lines', () => {
     const msg = messageParse('q t0k3n Some Message\nwith multiple lines');
 
     assert.equal(msg.token, 't0k3n');
-    assert.equal(msg.message, 'Some Message\nwith multiple lines');
+    assert.equal(decrypt(msg.message), 'Some Message\nwith multiple lines');
   });
 
   it('should persist an incoming Slack message into the queue', () => {
@@ -52,9 +53,9 @@ describe('Messages I/O', () => {
     const queue = getQueue();
 
     assert.equal(queue.length, 1);
-    assert.equal(queue[0].name, 'Matt');
+    assert.equal(queue[0].name, 'Matt Lo');
     assert.equal(queue[0].token, 't0k3n');
-    assert.equal(queue[0].message, 'Test Message');
+    assert.equal(decrypt(queue[0].message), 'Test Message');
   });
 
   it('should not return anything on invalid relay token', () => {
@@ -99,8 +100,8 @@ describe('Messages I/O', () => {
     }, (response) => {
       // validate response
       assert.deepEqual(response.data, [
-        {type: 'message', message: 'Test Message', name: 'Matt', token: 't0k3n'},
-        {type: 'message', message: 'Another String', name: 'Matt', token: 't0k3n'}
+        {type: 'message', message: 'Test Message', name: 'Matt Lo', token: 't0k3n'},
+        {type: 'message', message: 'Another String', name: 'Matt Lo', token: 't0k3n'}
       ]);
 
       // queue should not contain these items
@@ -110,6 +111,6 @@ describe('Messages I/O', () => {
     const queue = getQueue();
 
     assert.equal(queue.length, 1);
-    assert.equal(queue[0].message, 'Other String');
+    assert.equal(decrypt(queue[0].message), 'Other String');
   });
 });
