@@ -22,7 +22,7 @@ class Chat extends React.Component {
   }
 
   componentDidMount() {
-    this.refs.chattextbox.focus();
+    //this.refs.chattextbox.focus(); // @TODO: bug where the cursor isn't at the end
 
     if (this.canPoll()) {
       this.poll();
