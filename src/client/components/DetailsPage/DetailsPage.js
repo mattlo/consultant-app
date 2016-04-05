@@ -21,10 +21,56 @@ export default function DetailsPage() {
 
       <div className="container">
         <section className="section">
-          <h2>Architecture and Development</h2>
+          <blockquote className="blockquote">
+            <p className="m-b-0">
+              I'm a passionate technologist who wants to help other engineers and engineering teams
+              reach an equilibrium in research, value, and execution. My tools evolve constantly but
+              I generally work with <strong>Node, LoopBack, Hapi, React, Redux, Angular, RxJS,
+              Postgres, Mongo, and AWS</strong>. I have a long list of other technologies that I
+              work with <a target="_blank" href="http://stackoverflow.com/users/1146987/matt-lo">on
+              StackOverflow</a>, or <a onClick={handleModal()}>you can ask me directly</a>. Some of
+              the top <strong>integrations
+              I work with are Adobe Experience Manager, SAP, Salesforce, Mail services (Railgun,
+              Mandrill), Stripe, Authorize.net, and Sitecore.</strong> I can learn any custom
+              integration point or learn any product you want to integrate with.
+            </p>
+            <br />
+            <p className="m-b-0">
+              <strong>
+                I've built client insurance exchange systems, scalable SOAs, custom secure
+                workflows, performant mobile web apps, and helped teams hit tough delivery
+                dates.
+              </strong>&nbsp;
+              On top meeting requirements for each contract, I've
+              improved automation, developer and process efficiency, culture improvements, and
+              provided roadmap strategy so companies are well position in the long run.
+            </p>
+          </blockquote>
+        </section>
+
+        <section className="section">
+          <h2><i className="fa fa-code" /> Architecture and Development</h2>
 
           <p>
+            If you have an efficiency problem, a deadline problem, a knowledge problem, or a problem
+            you don't know exists yet, you need an expert!
+            &nbsp;<a onClick={handleModal()}>Contact me directly</a> and we can figure out if
+            there's an opportunity to be discovered. I'm well verse in
+            several domains so you can talk freely. Several individuals who contact me walk away
+            from our first meeting with more insight than they had previously.
+          </p>
 
+          <p>
+            My proficiency revolves around several architectures including services oriented (SOA),
+            monolithic, and micro services oriented over REST. <strong>I'm well verse in agile and
+            waterfall and usually work closely with product owners, developers, UX, and the
+            leadership team.</strong>
+          </p>
+
+          <p>
+            When we talk, <strong>ask about my prior engagements, case studies, or anything
+            else.</strong> I have a Reddit-like AMA policy! You can even ask me how to solve your
+            architectural problems right on the call.
           </p>
 
           <h4>What's the process?</h4>
@@ -44,18 +90,17 @@ export default function DetailsPage() {
               invoice every month itemizing all the time I worked.
             </li>
             <li>
-              When all papers are signed, I will buy the key decision maker coffee some point the
-              near
-              future.
+              I integrate within your environment on Day 1 and we get to work!
             </li>
           </ol>
 
-          <a className="btn btn-primary" onClick={handleModal('Consulting')}>Let's discuss the
-            opportunities</a>
+          <a className="btn btn-primary" onClick={handleModal('Consulting')}>
+            <i className="fa fa-code" /> Let's discuss the opportunities
+          </a>
         </section>
 
         <section className="section">
-          <h2>Remote Code Review</h2>
+          <h2><i className="fa fa-file-archive-o" /> Remote Code Review</h2>
 
           <p>
             Companies want a health snapshot of their codebase. Developers are sometimes too busy
@@ -97,16 +142,20 @@ export default function DetailsPage() {
             </li>
           </ol>
 
-          <a className="btn btn-primary" onClick={handleModal('Code Review')}>Get a code review</a>
+          <a className="btn btn-primary" onClick={handleModal('Code Review')}>
+            <i className="fa fa-file-archive-o" /> Get a code review
+          </a>
         </section>
 
         <section className="section">
-
-
-          <h2>Company Workshops and Training</h2>
+          <h2><i className="fa fa-graduation-cap" /> Company Workshops and Training</h2>
 
           <p>
-
+            Lets work together if you need one-on-one mentorship, team training (centralized or
+            distributed), or want me to host a meetup for you as the lead speaker. I've helped train
+            individuals in all kinds of specific libraries like React and Hapi, architecture and
+            design patterns, or company specific tangible skillsets that complement their technical
+            goals.
           </p>
 
           <h4>The approach</h4>
@@ -131,13 +180,12 @@ export default function DetailsPage() {
               time</strong>, and invoice net terms.
             </li>
             <li>
-              Start the process agreed on step 3. Upon completion of the training, I will buy all
-              participants a gift card to a preferred coffee shop.
+              Start the process agreed on step 3 and get to work!
             </li>
           </ol>
 
           <a className="btn btn-primary" onClick={handleModal('Training')}>
-            Let's talk about training
+            <i className="fa fa-graduation-cap" /> Let's talk about training
           </a>
 
         </section>
