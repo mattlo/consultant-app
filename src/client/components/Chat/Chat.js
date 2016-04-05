@@ -22,7 +22,13 @@ class Chat extends React.Component {
   }
 
   componentDidMount() {
-    // this.refs.chattextbox.focus(); // @TODO: bug where the cursor isn't at the end
+    const textarea = this.refs.chattextbox._rootDOMNode;
+
+    textarea.focus();
+    textarea.setSelectionRange(
+      textarea.value.length,
+      textarea.value.length
+    );
 
     if (this.canPoll()) {
       this.poll();
