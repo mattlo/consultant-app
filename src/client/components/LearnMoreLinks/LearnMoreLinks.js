@@ -10,7 +10,7 @@ export default function LearnMoreLinks() {
   return (
     <div className="container text-xs-center learn-more-links">
       <a className="availability">
-        I'm currently available for projects for the next 6 months
+        I'm currently available for projects in Q3/Q4 2016.
       </a>
 
       <br />
