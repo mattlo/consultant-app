@@ -38,7 +38,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.7.2",
     "bluebird": "^3.3.4",
-    "bootstrap": "^4.0.0-alpha.2",
+    "bootstrap": "4.0.0-alpha.2",
     "chai": "^3.5.0",
     "classnames": "^2.2.3",
     "crypto": "0.0.3",
