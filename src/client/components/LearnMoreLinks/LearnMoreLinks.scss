@@ -2,7 +2,6 @@
 
 .learn-more-links {
   .availability {
-    background: $brand-warning;
     color: #000;
     padding: 10px;
     border-radius: $border-radius;
@@ -13,5 +12,13 @@
     &:hover {
       text-decoration: none;
     }
+  }
+
+  .availability-open {
+    background: $brand-success;
+  }
+
+  .availability-closed {
+    background: $brand-warning;
   }
 }

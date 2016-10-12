@@ -1,6 +1,7 @@
 import './LearnMoreLinks.scss';
 import React from 'react';
 import {store} from '../../data/index';
+import {availability} from '../../content';
 
 function handleModal() {
   return store.dispatch({type: 'SHOW_MODAL'});
@@ -9,8 +10,8 @@ function handleModal() {
 export default function LearnMoreLinks() {
   return (
     <div className="container text-xs-center learn-more-links">
-      <a className="availability">
-        I'm currently available for projects in Q3/Q4 2016.
+      <a className={`availability availability-${availability.className}`}>
+        {availability.content}
       </a>
 
       <br />

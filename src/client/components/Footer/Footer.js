@@ -1,6 +1,7 @@
 import './Footer.scss';
 import React from 'react';
 import {store} from '../../data/index';
+import {availability} from '../../content';
 
 function handleModal() {
   store.dispatch({type: 'SHOW_MODAL'});
@@ -27,7 +28,7 @@ export default function Footer() {
             </div>
             <div className="col-md-4 col-xs-12">
               <a className="availability" onClick={handleModal}>
-                I'm currently available for projects in Q3/Q4 2016.
+                {availability.content}
               </a>
             </div>
           </div>
