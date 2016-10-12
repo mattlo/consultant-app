@@ -4,7 +4,7 @@ import {store} from '../../data/index';
 import {connect} from 'react-redux';
 import {scrollY} from '../../util/common';
 
-export default class BaseModal extends React.Component {
+export class BaseModal extends React.Component {
   static propTypes = {
     children: React.PropTypes.node,
     showContactModal: React.PropTypes.object,
