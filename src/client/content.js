@@ -1,4 +1,4 @@
 export const availability = {
-  className: 'closed',
-  content: 'I have full time availability starting in Q1 2017'
+  className: 'open',
+  content: 'I\'m currently available for projects for the next 6 months.'
 };
