@@ -29,71 +29,47 @@ function renderTweets() {
 
 export default function HomePage() {
   return (
-    <div className="homepage">
-      <PersistentHeader />
-
-      <HeroSalesPitch />
-
-      <div className="container">
-        <QuickOfferings />
-
-        <hr />
-
-        <CompanyHistory />
-
-        <hr />
-        <br />
-
-        <div className="row">
-          <div className="col-sm-6 top-choices">
-            <h3>{MONTHS[(new Date()).getMonth()]}'s Top Choices</h3>
-            <h4>Engineering Book:</h4>
-            <p>
-              <img
-                style={{maxWidth: 100}}
-                src="https://cdn.mattlo.io/april-book.jpg"
-              />
-              <br />
-              Just Enough Software Architecture: A Risk-Driven Approach
-              <br />
-              <a
-                target="_blank"
-                className="btn btn-sm btn-primary"
-                href="http://www.amazon.com/Just-Enough-Software-Architecture-Risk-Driven/dp/0984618104"
-              >
-                Amazon.com
-              </a>
-            </p>
-            <h4>
-              Articles, pull requests, and comments
-            </h4>
-            <ul>
-              <li>
-                <a
-                  target="_blank"
-                  href="https://github.com/reactjs/redux/issues/291"
-                >
-                  API calls in actions within Redux
-                </a>
-              </li>
-              <li>
-                <a
-                  target="_blank"
-                  href="https://labstack.com/echo"
-                >
-                  Echo - Go Web Framework
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-sm-6">
-            {renderTweets()}
-          </div>
-        </div>
-      </div>
-
-      <Footer />
-      <ContactModal />
+    <div
+      className="homepage"
+      style={{
+        color: '#fff',
+        textAlign: 'center',
+        padding: 15,
+        background: '#333'
+      }}
+    >
+      <h1>Matt Lo</h1>
+      <h3>
+        CTO @ <a href="https://www.innovadiv.com">Innovadiv.com</a>
+      </h3>
+      <hr />
+      <p style={{fontSize: '18px'}}>
+        If you came here for consulting, I no longer offer those services.
+        <br /><br />
+        If you came here to know more about me, read my tweets at
+        {' '}
+        <a href="https://www.twitter.com/Matt_Lo">
+          @Matt_Lo
+        </a>.
+        <br /><br />
+        If you came here to invest, DM
+        {' '}
+        <a href="https://www.twitter.com/Matt_Lo">
+          @Matt_Lo
+        </a>.
+        <br /><br />
+        If you came here for JavaScript expertise, open a StackOverflow link and DM the link to
+        {' '}
+        <a href="https://www.twitter.com/Matt_Lo">
+          @Matt_Lo
+        </a>.
+        <br /><br />
+        If you want to meet up in Chicago, DM
+        {' '}
+        <a href="https://www.twitter.com/Matt_Lo">
+          @Matt_Lo
+        </a>.
+      </p>
     </div>
   );
 }

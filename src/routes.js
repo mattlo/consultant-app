@@ -15,5 +15,4 @@ export default new Router(router => {
   }
 
   router('/', () => attachState(HomePage));
-  router('/experience-and-consultancy', () => attachState(DetailPage));
 });

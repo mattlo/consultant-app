@@ -30,7 +30,7 @@ export default function Layout({body}) {
         <link rel="shortcut icon" href="https://cdn.mattlo.io/favicons/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="https://cdn.mattlo.io/favicons/favicon.ico" type="image/x-icon" />
       </head>
-      <body>
+      <body style={{background: '#333'}}>
         <div id="app" dangerouslySetInnerHTML={{__html: body}} />
         <script src={`${host}/assets/bundle.js`}></script>
       </body>
