@@ -52,7 +52,7 @@
     "html-webpack-template": "^4.0.0",
     "inert": "^3.2.0",
     "iso": "^5.2.0",
-    "lodash": "^4.6.1",
+    "lodash": "^4.17.13",
     "mocha": "^2.4.5",
     "node-sass": "^4.7.2",
     "node-uuid": "^1.4.7",
