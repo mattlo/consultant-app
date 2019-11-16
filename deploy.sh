@@ -13,4 +13,4 @@ endpoint="root@$1"
 scpEndpoint="$endpoint:app.tar.gz"
 tar -zcf app.tar.gz dist node_modules
 scp app.tar.gz $scpEndpoint
-ssh $endpoint "forever stopall && rm -rf /opt/app && mkdir -p /opt/app && tar -xf app.tar.gz -C /opt/app && rm app.tar.gz && cd /opt && sh start.sh"
+ssh -oStrictHostKeyChecking=no $endpoint "forever stopall && rm -rf /opt/app && mkdir -p /opt/app && tar -xf app.tar.gz -C /opt/app && rm app.tar.gz && cd /opt && sh start.sh"
