@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Test
           command: yarn test --maxWorkers=1
-      - run: NODE_ENV=production yarn build && chmod +x deploy.sh && ~/mattlo/consultant-app/deploy.sh "mattlo.io"
+      - run: NODE_ENV=production yarn build && chmod +x deploy.sh && ~/repo/deploy.sh "mattlo.io"
 
 workflows:
   version: 2
@@ -57,7 +57,7 @@ workflows:
       - build:
           filters:
             branches:
-              ignore: master
+              only: master
             tags:
               ignore: /.*/
       - deployment:
