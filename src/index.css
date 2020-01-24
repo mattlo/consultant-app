@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background: #f0f0f0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+p {
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.youtube-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.youtube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cb-logo {
+  display: block;
+  margin: 0 auto;
+  width: 174px;
+  padding: 20px;
+  border-radius: 6px;
+  border: solid 1px #4856ff;
+  background: #fff;
+}
+
+a {
+  color: #4856ff;
+}
+
+#root, .App {
+  height: 100%;
+  overflow: auto;
+}
+
