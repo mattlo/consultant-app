@@ -32,6 +32,7 @@ function App() {
         <div>
           <a href="https://getchipbot.com" className="cb-logo">
             <img
+              alt="ChipBot, Inc."
               src="https://static.getchipbot.com/shared/images/logo/2019-05-13/svg/cb-full-logo-dark.svg" />
           </a>
         </div>
