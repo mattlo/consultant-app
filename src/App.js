@@ -16,9 +16,9 @@ function App() {
         <p>
           I'm an entrepreneur, marketer, software engineer, and product maker.
           {' '}
-          <span>I also play poker and study Japanese.</span>
+          <strong>I build companies that use cognitive intelligence to elevate others.</strong>
           {' '}
-          <strong>My mission is to make the best product you'll ever buy.</strong>
+          <span>I also play poker and study Japanese.</span>
         </p>
 
         <YouTubeVideo
