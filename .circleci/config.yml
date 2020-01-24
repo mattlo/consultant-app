@@ -40,8 +40,6 @@ workflows:
   chipbot-workflows:
     jobs:
       - deployment:
-          requires:
-            - build
           filters:
             branches:
               only: master
