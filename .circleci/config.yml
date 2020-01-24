@@ -22,6 +22,20 @@ defaults: &defaults
 
 version: 2
 jobs:
+  build:
+    <<: *defaults
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - restore-cache: *restore-yarn-cache
+      - run: *yarn
+      - save-cache: *save-yarn-cache
+      - run:
+          name: Test
+          command: yarn test --maxWorkers=1
+
   deployment:
     <<: *defaults
 
@@ -39,7 +53,15 @@ workflows:
   version: 2
   chipbot-workflows:
     jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+            tags:
+                ignore: /.*/
       - deployment:
+          requires:
+            - build
           filters:
             branches:
               only: master
