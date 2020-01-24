@@ -16,7 +16,7 @@ function App() {
         <p>
           I'm an entrepreneur, marketer, software engineer, and product maker.
           {' '}
-          <span>I also play poker and studying Japanese.</span>
+          <span>I also play poker and study Japanese.</span>
           {' '}
           <strong>My mission is to make the best product you'll ever buy.</strong>
         </p>
