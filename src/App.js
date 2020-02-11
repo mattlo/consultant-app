@@ -12,7 +12,9 @@ function App() {
         <h2>
           CEO and Founder of <a href="https://getchipbot.com">ChipBot, Inc.</a>
         </h2>
-
+        <p>
+          Email: <a href="mailto:matt@getchipbot.com">matt@getchipbot.com</a>
+        </p>
         <p>
           I'm an entrepreneur, marketer, software engineer, and product maker.
           {' '}
